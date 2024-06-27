@@ -15,20 +15,20 @@
         android:theme="@style/Theme.FirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".CitiesActivity"
+            android:name=".activities.CitiesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.CurrencyActivity"
             android:exported="false" />
         <activity
-            android:name=".CurrencyActivity"
+            android:name=".activities.InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".InfoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuActivity"
+            android:name=".activities.MenuActivity"
             android:exported="false"
             android:theme="@style/Theme.FirstApp" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,20 +1,13 @@
-package com.starbucks.firstapp;
+package com.starbucks.firstapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.starbucks.firstapp.databinding.ActivityMenuBinding;
+import com.starbucks.firstapp.R;
 
 public class MenuActivity extends AppCompatActivity {
 

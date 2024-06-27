@@ -1,4 +1,4 @@
-package com.starbucks.firstapp;
+package com.starbucks.firstapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.starbucks.firstapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 

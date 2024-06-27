@@ -1,4 +1,4 @@
-package com.starbucks.firstapp;
+package com.starbucks.firstapp.activities;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.starbucks.firstapp.R;
 
 public class InfoActivity extends AppCompatActivity {
 
