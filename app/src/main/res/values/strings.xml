@@ -3,4 +3,5 @@
     <string name="label_password">Password:</string>
     <string name="button_login">Log in</string>
     <string name="label_user">User:</string>
+    <string name="button_get_rate" translatable="false">Get Rate</string>
 </resources>
