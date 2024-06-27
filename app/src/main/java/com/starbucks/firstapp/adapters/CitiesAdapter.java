@@ -1,8 +1,10 @@
 package com.starbucks.firstapp.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.SpannableString;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -10,11 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.starbucks.firstapp.R;
+import com.starbucks.firstapp.data.CitiesProvider;
+
 public class CitiesAdapter extends RecyclerView.Adapter<CitiesAdapter.CityViewHolder> {
 
-    Context context;
+    Activity context;
 
-    public CitiesAdapter(Context context) {
+    public CitiesAdapter(Activity context) {
         this.context = context;
     }
 
@@ -22,30 +27,37 @@ public class CitiesAdapter extends RecyclerView.Adapter<CitiesAdapter.CityViewHo
     @NonNull
     @Override
     public CityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        TextView rootView = new TextView(parent.getContext());
-        rootView.setTextSize(40);
+        LayoutInflater inflater = context.getLayoutInflater();
+        View rootView = inflater.inflate(R.layout.item_city, parent, false);
         return new CityViewHolder(rootView);
     }
 
     // Every time RecyclerView needs to render data into a View Holder
     @Override
     public void onBindViewHolder(@NonNull CityViewHolder holder, int position) {
-        Log.d("RecyclerView", String.valueOf(position));
-        TextView tv = (TextView) holder.itemView;
-        if (position % 2 == 0) {
-            tv.setBackgroundColor(0xFFE489A3);  // ARGB
-        } else {
-            tv.setBackgroundColor(0xFFFFFFFF);  // ARGB
-        }
-        tv.setText("Position " + String.valueOf(position));
+        String cityName = CitiesProvider.cities[position][0];
+        String cityPopulation = CitiesProvider.cities[position][1];
+        holder.bind(cityName, cityPopulation);
     }
 
     @Override
     public int getItemCount() {
-        return 200;
+        return CitiesProvider.cities.length;
     }
 
     class CityViewHolder extends RecyclerView.ViewHolder {
+
+        public void bind(String name, String population) {
+            clearAll();
+
+            TextView textName = itemView.findViewById(R.id.text_city_name);
+            textName.setText(name);
+            TextView textPopulation = itemView.findViewById(R.id.text_city_population);
+            textPopulation.setText(population);
+        }
+
+        public void clearAll() {
+        }
 
         public CityViewHolder(@NonNull View itemView) {
             super(itemView);
