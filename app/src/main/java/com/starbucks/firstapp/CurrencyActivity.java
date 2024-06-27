@@ -1,6 +1,7 @@
 package com.starbucks.firstapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -10,6 +11,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class CurrencyActivity extends AppCompatActivity {
 
@@ -28,6 +39,33 @@ public class CurrencyActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_dropdown_item
         );
         spinner.setAdapter(adapter);
+
+        findViewById(R.id.btn_getrate).setOnClickListener(v -> {
+            request();
+        });
+
+    }
+
+    void request() {
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = "https://open.er-api.com/v6/latest/USD";
+
+        JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    JSONObject rates = null;
+                    try {
+                        rates = response.getJSONObject("rates");
+                        double eur = rates.getDouble("EUR");
+                        Log.d("Volley", String.valueOf(eur));
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+
+                }
+        );
+        queue.add(stringRequest);
 
     }
 }
