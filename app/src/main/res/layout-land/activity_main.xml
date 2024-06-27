@@ -5,53 +5,46 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="32dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="40dp"
-        android:text="Starbucks Apps"
-        android:textSize="@dimen/title" />
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="0dp"
+            style="@style/form_label"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="35"
-            android:text="@string/label_user"
-            style="@style/form_label" />
+            android:text="@string/label_user" />
 
         <EditText
             android:id="@+id/edit_user"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="65" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <TextView
             style="@style/form_label"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="35"
             android:gravity="end"
             android:text="@string/label_password" />
 
         <EditText
             android:id="@+id/edit_password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="65" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <Button
