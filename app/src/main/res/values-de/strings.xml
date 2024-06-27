@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name" translatable="false">First App</string>
+    <string name="label_password">Passwort:</string>
+    <string name="button_login">Anmelden</string>
+    <string name="label_user">Benutzer:</string>
+</resources>

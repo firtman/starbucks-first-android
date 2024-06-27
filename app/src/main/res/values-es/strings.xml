@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">First App</string>
+    <string name="label_password">Contraseña:</string>
+    <string name="button_login">Ingresar</string>
+    <string name="label_user">Usuario:</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">First App</string>
+    <string name="label_password">비밀번호:</string>
+    <string name="button_login">로그인</string>
+    <string name="label_user">사용자:</string>
+</resources>
